@@ -21,3 +21,9 @@ __pycache__
 *.caffemodel
 *.mat
 *.npy
+*.vtf
+*.vpk3
+*.dds
+*.json
+*.png
+
