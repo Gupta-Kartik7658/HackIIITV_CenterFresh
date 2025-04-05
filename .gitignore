@@ -3,6 +3,7 @@ retex
 ExtractedVPK
 PNG
 vtflib132-bin3
+retexEnv
 
 # folder
 .vscode
@@ -12,6 +13,7 @@ vtflib132-bin3
 *.json
 *.png
 __pycache__
+sd-webui
 
 # file type
 *.svg
