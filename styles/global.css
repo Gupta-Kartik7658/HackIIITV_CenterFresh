@@ -1,0 +1,103 @@
+/* Global styles */
+body {
+    background: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%);
+    font-family: 'Press Start 2P', cursive; /* Retro gaming font */
+}
+
+/* Titles */
+.main-title {
+    font-size: 48px;
+    font-weight: bold;
+    color: #FF4B4B;
+    text-align: center;
+    text-shadow: 3px 3px #FFD700;
+    margin-bottom: 20px;
+    animation: glow 2s infinite alternate;
+}
+
+.subtitle {
+    font-size: 24px;
+    color: #E0E0E0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Section headers */
+.section-title {
+    font-size: 32px;
+    color: #FFD700;
+    text-shadow: 2px 2px #FF4B4B;
+    margin-top: 30px;
+}
+
+/* Text */
+.text {
+    font-size: 18px;
+    color: #E0E0E0;
+    line-height: 1.6;
+    font-family: 'Arial', sans-serif; /* Modern fallback */
+}
+
+/* Buttons */
+.stButton>button {
+    background: linear-gradient(45deg, #FF4B4B, #FFD700);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stButton>button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    color: #1A1A1A;
+}
+
+/* Dropzone */
+.dropzone {
+    border: 4px dashed #FFD700;
+    padding: 50px;
+    text-align: center;
+    background: rgba(30, 30, 30, 0.9);
+    border-radius: 20px;
+    margin: 20px 0;
+    transition: border-color 0.3s;
+}
+
+.dropzone:hover {
+    border-color: #FF4B4B;
+}
+
+.dropzone-text {
+    font-size: 22px;
+    color: #E0E0E0;
+}
+
+/* Image containers */
+.image-box {
+    border: 3px solid #FFD700;
+    padding: 15px;
+    border-radius: 15px;
+    background: #2A2A2A;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+}
+
+.image-box:hover {
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes glow {
+    0% { text-shadow: 3px 3px #FFD700; }
+    100% { text-shadow: 3px 3px #FF4B4B; }
+}
+
+/* Sidebar */
+.sidebar .sidebar-content {
+    background: #1E1E1E;
+    border-right: 2px solid #FFD700;
+}
