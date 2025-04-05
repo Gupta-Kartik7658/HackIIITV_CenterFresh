@@ -1,56 +1,61 @@
 import streamlit as st
-from PIL import Image
-import os
-from pathlib import Path
-from enhance import enhance_texture
 
-# Set up directories
-UPLOAD_DIR = Path("uploads")
-UPLOAD_DIR.mkdir(exist_ok=True)
+# Set page config (first command)
+st.set_page_config(
+    page_title="Texture Remaster Tool",
+    page_icon="🎮",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
-# Streamlit app
-st.title("Texture Remaster Tool")
-st.markdown("Upload a low-resolution game texture (e.g., ~20KB) to enhance it with ESRGAN!")
+# Load global CSS
+with open("styles/global.css") as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-# File uploader
-uploaded_file = st.file_uploader("Drop or select a texture file", type=["png"], key="texture_uploader")
+# Add Google font
+st.markdown('<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">', unsafe_allow_html=True)
 
-# Process and display
-if uploaded_file is not None:
-    # Save the uploaded file
-    file_path = UPLOAD_DIR / uploaded_file.name
-    with open(file_path, "wb") as f:
-        f.write(uploaded_file.getbuffer())
-    
-    # Display original texture
-    st.subheader("Original vs Enhanced")
-    col1, col2 = st.columns(2)
-    with col1:
-        st.write("Original Texture")
-        original_img = Image.open(file_path)
-        st.image(original_img, use_column_width=True)
+# Header
+st.markdown('<h1 class="main-title">Texture Remaster Tool</h1>', unsafe_allow_html=True)
+st.markdown('<p class="subtitle">Reviving Retro Games with Modern Magic</p>', unsafe_allow_html=True)
 
-    # Enhance button
-    if st.button("Enhance Texture"):
-        with st.spinner("Enhancing texture with ESRGAN..."):
-            # Enhance the texture
-            enhanced_path = enhance_texture(file_path)
-            enhanced_img = Image.open(enhanced_path)
-            
-            # Display enhanced texture
-            with col2:
-                st.write("Enhanced Texture")
-                st.image(enhanced_img, use_column_width=True)
-            
-            # Download option
-            with open(enhanced_path, "rb") as f:
-                st.download_button(
-                    label="Download Enhanced Texture",
-                    data=f,
-                    file_name=f"enhanced_{uploaded_file.name}",
-                    mime="image/png"
-                )
+# About section
+st.markdown('<h2 class="section-title">Our Mission</h2>', unsafe_allow_html=True)
+with st.container():
+    st.markdown("""
+        <div class="image-box" style="padding: 20px;">
+            <p class="text">
+            Welcome to the Texture Remaster Tool—a fusion of nostalgia and innovation. We’re here to transform the pixelated sprites of classics like <i>GTA Vice City</i> and Nintendo gems into stunning, modern game assets. Powered by cutting-edge AI, our tool upscales and reimagines retro textures for today’s game engines.
+            </p>
+        </div>
+    """, unsafe_allow_html=True)
 
-# Sidebar with info
-st.sidebar.title("About")
-st.sidebar.info("A tool for designers to upscale low-res game textures using ESRGAN. Upload a PNG, enhance it, and download the result!")
+# Examples section
+st.markdown('<h2 class="section-title">Before & After</h2>', unsafe_allow_html=True)
+col1, col2 = st.columns(2)
+with col1:
+    st.image("assets/before_after1.png", caption="Pixel to Polished", use_column_width=True)
+with col2:
+    st.image("assets/before_after2.png", caption="Retro to Refined", use_column_width=True)
+
+# Navigation
+st.markdown('<h2 class="section-title">Explore More</h2>', unsafe_allow_html=True)
+col1, col2, col3, col4 = st.columns(4)
+with col1:
+    if st.button("Enhance Textures"):
+        st.switch_page("pages/enhance.py")
+with col2:
+    if st.button("Gallery"):
+        st.switch_page("pages/gallery.py")
+with col3:
+    if st.button("Settings"):
+        st.switch_page("pages/settings.py")
+with col4:
+    if st.button("Tutorial"):
+        st.switch_page("pages/tutorial.py")
+
+# Footer
+st.markdown("""
+    <hr style="border: 2px dashed #FFD700; margin: 40px 0;">
+    <p class="text" style="text-align: center;">Crafted with ❤️ by [Your Team Name] | Hackathon 2025</p>
+""", unsafe_allow_html=True)
