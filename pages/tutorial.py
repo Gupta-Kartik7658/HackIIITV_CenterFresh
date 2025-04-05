@@ -5,7 +5,7 @@ from pathlib import Path
 css_path = Path("styles/global.css")
 if css_path.exists():
     with open(css_path) as f:
-    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 else:
     st.error("CSS file not found. Please check the styles directory.")
 
@@ -148,18 +148,3 @@ st.markdown("""
     </div>
 </div>
 """, unsafe_allow_html=True)
-
-# Navigation buttons
-col1, col2, col3, col4 = st.columns(4)
-with col1:
-    if st.button("Back to About"):
-        st.switch_page("../app.py")
-with col2:
-    if st.button("Gallery"):
-        st.switch_page("gallery.py")
-with col3:
-    if st.button("Settings"):
-        st.switch_page("settings.py")
-with col4:
-    if st.button("Enhance"):
-        st.switch_page("enhance.py")

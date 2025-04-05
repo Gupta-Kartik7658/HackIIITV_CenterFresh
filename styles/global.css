@@ -98,37 +98,75 @@ body {
 
 /* Sidebar */
 .sidebar .sidebar-content {
-    background: #1E1E1E;
-    border-right: 2px solid #FFD700;
+    background: linear-gradient(180deg, #1A1A1A 0%, #2A2A2A 100%);
+    padding: 20px;
 }
 
-/* Tutorial Styles */
+/* Sidebar sections */
+.sidebar div[style*="background-color: rgba(42, 42, 42, 0.7)"] {
+    border: 2px solid #FFD700;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s;
+}
+
+.sidebar div[style*="background-color: rgba(42, 42, 42, 0.7)"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Sidebar buttons */
+.sidebar .stButton>button {
+    margin-bottom: 10px;
+    font-size: 16px;
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #2A2A2A, #3A3A3A);
+    border: 1px solid #FFD700;
+    color: #FFD700;
+    transition: all 0.3s;
+}
+
+.sidebar .stButton>button:hover {
+    background: linear-gradient(45deg, #FF4B4B, #FFD700);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Sidebar footer */
+.sidebar div[style*="margin-top: auto"] {
+    border-top: 1px dashed #FFD700;
+    margin-top: 30px;
+}
+
+/* Tutorial container */
 .tutorial-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
 
+/* Tutorial sections */
 .tutorial-section {
-    background: rgba(46, 46, 46, 0.8);
-    border-radius: 10px;
-    padding: 25px;
+    background: rgba(42, 42, 42, 0.7);
+    border: 2px solid #FFD700;
+    border-radius: 15px;
+    padding: 20px;
     margin-bottom: 30px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+/* Tutorial titles */
 .tutorial-title {
-    color: #00ff00;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 1.5em;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #00ff00;
+    color: #FFD700;
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px #FF4B4B;
 }
 
+/* Tutorial content */
 .tutorial-content {
-    color: #ffffff;
-    font-size: 1.1em;
+    color: #E0E0E0;
+    font-size: 16px;
     line-height: 1.6;
 }
 
@@ -142,24 +180,25 @@ body {
 }
 
 .tutorial-content li {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .tutorial-content strong {
-    color: #00ff00;
+    color: #FFD700;
 }
 
 .tutorial-content ul ul {
+    margin-left: 20px;
     margin-top: 5px;
     margin-bottom: 5px;
 }
 
-/* Logo Styles */
+/* Image styling */
 .stImage {
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 .stImage img {
-    max-height: 150px;
-    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }

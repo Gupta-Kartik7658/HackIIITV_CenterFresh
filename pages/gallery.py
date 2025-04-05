@@ -23,11 +23,3 @@ with col2:
     st.image("assets/before_after1.png", caption="Laser Fight - Enhanced with Stable Diffusion", use_column_width=True)
     st.download_button("Download Sample", file_name="vicecity_enhanced.png", data=open("assets/before_after1.png", "rb"), mime="image/png")
     st.markdown('</div>', unsafe_allow_html=True)
-
-# Sidebar
-st.sidebar.title("Navigation")
-st.sidebar.button("Back to About", on_click=lambda: st.switch_page("../app.py"))
-st.sidebar.button("Enhance Textures", on_click=lambda: st.switch_page("enhance.py"))
-st.sidebar.button("Settings", on_click=lambda: st.switch_page("settings.py"))
-st.sidebar.button("Tutorial", on_click=lambda: st.switch_page("tutorial.py"))
-st.sidebar.markdown('<p class="text">See what Stable Diffusion can do!</p>', unsafe_allow_html=True)

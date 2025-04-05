@@ -112,11 +112,3 @@ if uploaded_files:
                         )
                 else:
                     st.error("Enhancement failed. Please check if Stable Diffusion WebUI is running.")
-
-# Sidebar
-st.sidebar.title("Navigation")
-st.sidebar.button("Back to About", on_click=lambda: st.switch_page("../app.py"))
-st.sidebar.button("Gallery", on_click=lambda: st.switch_page("gallery.py"))
-st.sidebar.button("Settings", on_click=lambda: st.switch_page("settings.py"))
-st.sidebar.button("Tutorial", on_click=lambda: st.switch_page("tutorial.py"))
-st.sidebar.markdown('<p class="text">Batch process your retro textures!</p>', unsafe_allow_html=True)

@@ -24,11 +24,3 @@ with st.form("settings_form"):
     submit = st.form_submit_button("Save Settings")
     if submit:
         st.success("Settings saved! These will be used as defaults in the Enhance page.")
-
-# Sidebar
-st.sidebar.title("Navigation")
-st.sidebar.button("Back to About", on_click=lambda: st.switch_page("../app.py"))
-st.sidebar.button("Enhance Textures", on_click=lambda: st.switch_page("enhance.py"))
-st.sidebar.button("Gallery", on_click=lambda: st.switch_page("gallery.py"))
-st.sidebar.button("Tutorial", on_click=lambda: st.switch_page("tutorial.py"))
-st.sidebar.markdown('<p class="text">Configure your Stable Diffusion settings!</p>', unsafe_allow_html=True)
