@@ -101,3 +101,65 @@ body {
     background: #1E1E1E;
     border-right: 2px solid #FFD700;
 }
+
+/* Tutorial Styles */
+.tutorial-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.tutorial-section {
+    background: rgba(46, 46, 46, 0.8);
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tutorial-title {
+    color: #00ff00;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #00ff00;
+}
+
+.tutorial-content {
+    color: #ffffff;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.tutorial-content p {
+    margin-bottom: 15px;
+}
+
+.tutorial-content ul, .tutorial-content ol {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.tutorial-content li {
+    margin-bottom: 10px;
+}
+
+.tutorial-content strong {
+    color: #00ff00;
+}
+
+.tutorial-content ul ul {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* Logo Styles */
+.stImage {
+    margin-bottom: 20px;
+}
+
+.stImage img {
+    max-height: 150px;
+    object-fit: contain;
+}

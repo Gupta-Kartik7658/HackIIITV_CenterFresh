@@ -1,4 +1,5 @@
 import streamlit as st
+from pathlib import Path
 
 # Set page config (first command)
 st.set_page_config(
@@ -9,15 +10,23 @@ st.set_page_config(
 )
 
 # Load global CSS
-with open("styles/global.css") as f:
-    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+css_path = Path("styles/global.css")
+if css_path.exists():
+    with open(css_path) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+else:
+    st.error("CSS file not found. Please check the styles directory.")
 
 # Add Google font
 st.markdown('<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">', unsafe_allow_html=True)
 
-# Header
-st.markdown('<h1 class="main-title">Texture Remaster Tool</h1>', unsafe_allow_html=True)
-st.markdown('<p class="subtitle">Reviving Retro Games with AI Magic</p>', unsafe_allow_html=True)
+# Logo and Header
+col1, col2 = st.columns([1, 3])
+with col1:
+    st.image("assets/logo.png", use_column_width=True)
+with col2:
+    st.markdown('<h1 class="main-title">Texture Remaster Tool</h1>', unsafe_allow_html=True)
+    st.markdown('<p class="subtitle">Reviving Retro Games with AI Magic</p>', unsafe_allow_html=True)
 
 # About section
 st.markdown('<h2 class="section-title">Our Mission</h2>', unsafe_allow_html=True)
@@ -57,5 +66,5 @@ with col4:
 # Footer
 st.markdown("""
     <hr style="border: 2px dashed #FFD700; margin: 40px 0;">
-    <p class="text" style="text-align: center;">Crafted with ❤️ by [Your Team Name] | Hackathon 2025</p>
+    <p class="text" style="text-align: center;">Crafted with ❤️ by CenterFresh | Hackathon 2025</p>
 """, unsafe_allow_html=True)
