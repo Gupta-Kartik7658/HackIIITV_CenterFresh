@@ -69,7 +69,7 @@ def enhance_texture(file_path, denoising_strength=0.75, cfg_scale=7, steps=20, o
                 "http://127.0.0.1:7860/sdapi/v1/img2img",
                 json={
                     "init_images": [encoded_image],
-                    "prompt": "semi-realistic pixel art remaster, detailed, high-res",
+                    "prompt": "",
                     "denoising_strength": denoising_strength,
                     "cfg_scale": cfg_scale,
                     "steps": steps

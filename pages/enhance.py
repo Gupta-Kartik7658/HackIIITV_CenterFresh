@@ -22,7 +22,7 @@ st.markdown('<div class="dropzone"><p class="dropzone-text">Drag & Drop or Click
 uploaded_files = st.file_uploader("", type=["png", "dds", "vtf"], key="texture_uploader", label_visibility="collapsed", accept_multiple_files=True)
 if uploaded_files:
     for uploaded_file in uploaded_files:
-        if uploaded_file.size > 25000:
+        if uploaded_file.size > 2500000:
             st.error(f"{uploaded_file.name} is too large! Please upload files under 25KB.")
             st.stop()
 
