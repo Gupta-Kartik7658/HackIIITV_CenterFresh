@@ -12,3 +12,11 @@ retex
 *.caffemodel
 *.mat
 *.npy
+*.vtf
+*.vpk
+*.dds
+ExtractedVPK
+PNG
+vtflib132-bin
+
+
