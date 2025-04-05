@@ -1,8 +1,17 @@
 venv/
 retex
+ExtractedVPK
+PNG
+vtflib132-bin3
 
 # folder
 .vscode
+*.vtf
+*.vpk
+*.dds
+*.json
+*.png
+__pycache__
 
 # file type
 *.svg
