@@ -1,9 +1,7 @@
 streamlit==1.31.0
 vpk
 ipykernel
-torch 
-torchvision 
-torchaudio 
 opencv-python
 numpy
 pillow
+requests

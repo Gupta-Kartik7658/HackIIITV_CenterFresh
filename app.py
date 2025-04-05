@@ -17,7 +17,7 @@ st.markdown('<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P
 
 # Header
 st.markdown('<h1 class="main-title">Texture Remaster Tool</h1>', unsafe_allow_html=True)
-st.markdown('<p class="subtitle">Reviving Retro Games with Modern Magic</p>', unsafe_allow_html=True)
+st.markdown('<p class="subtitle">Reviving Retro Games with AI Magic</p>', unsafe_allow_html=True)
 
 # About section
 st.markdown('<h2 class="section-title">Our Mission</h2>', unsafe_allow_html=True)
@@ -25,7 +25,7 @@ with st.container():
     st.markdown("""
         <div class="image-box" style="padding: 20px;">
             <p class="text">
-            Welcome to the Texture Remaster Tool—a fusion of nostalgia and innovation. We’re here to transform the pixelated sprites of classics like <i>GTA Vice City</i> and Nintendo gems into stunning, modern game assets. Powered by cutting-edge AI, our tool upscales and reimagines retro textures for today’s game engines.
+            Welcome to the Texture Remaster Tool—a fusion of nostalgia and innovation. We're here to transform the pixelated sprites of classics like <i>GTA Vice City</i> and Nintendo gems into stunning, modern game assets. Powered by Stable Diffusion AI, our tool reimagines retro textures for today's game engines with unprecedented quality and detail.
             </p>
         </div>
     """, unsafe_allow_html=True)

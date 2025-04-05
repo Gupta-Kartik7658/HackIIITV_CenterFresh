@@ -16,7 +16,18 @@ with st.expander("Step 1: Find Retro Textures"):
     st.markdown('<p class="text">Grab low-res sprites from <a href="https://www.models-resource.com" target="_blank">The Models Resource</a> or your favorite retro game.</p>', unsafe_allow_html=True)
 with st.expander("Step 2: Upload & Enhance"):
     st.markdown('<p class="text">Head to the Enhance page, drag your PNGs (~20KB), and click "Enhance Now"!</p>', unsafe_allow_html=True)
-with st.expander("Step 3: Download & Use"):
+with st.expander("Step 3: Configure Settings"):
+    st.markdown('''
+    <p class="text">
+    Adjust the Stable Diffusion settings to get the best results:
+    <ul>
+        <li><strong>Denoising Strength:</strong> Controls how much the image is changed (0.0-1.0)</li>
+        <li><strong>CFG Scale:</strong> Controls how closely the image follows the prompt (1-20)</li>
+        <li><strong>Steps:</strong> Number of diffusion steps (1-150)</li>
+    </ul>
+    </p>
+    ''', unsafe_allow_html=True)
+with st.expander("Step 4: Download & Use"):
     st.markdown('<p class="text">Choose PNG or TGA, download, and import into your game engine.</p>', unsafe_allow_html=True)
 
 # Sidebar
