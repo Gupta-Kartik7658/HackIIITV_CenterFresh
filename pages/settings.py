@@ -11,19 +11,16 @@ st.markdown('<h1 class="main-title">Settings</h1>', unsafe_allow_html=True)
 st.markdown('<p class="subtitle">Customize Your Experience</p>', unsafe_allow_html=True)
 
 # Settings form
-st.markdown('<h2 class="section-title">Enhancement Options</h2>', unsafe_allow_html=True)
+st.markdown('<h2 class="section-title">Stable Diffusion Settings</h2>', unsafe_allow_html=True)
 with st.form("settings_form"):
-    sharpness = st.slider("Sharpness", 0.0, 2.0, 1.0, step=0.1)
-    contrast = st.slider("Contrast", 0.5, 1.5, 1.0, step=0.1)
-    style = st.selectbox("Style Preset", ["Default", "GTA V", "Cyberpunk", "Nintendo Modern"])
+    denoising_strength = st.slider("Denoising Strength", 0.0, 1.0, 0.75, step=0.05, 
+                                  help="Controls how much the image is changed. Higher values create more variation.")
+    cfg_scale = st.slider("CFG Scale", 1, 20, 7, step=1,
+                          help="Controls how closely the image follows the prompt. Higher values make it more literal.")
+    steps = st.number_input("Steps", 1, 150, 30, step=1,
+                           help="Number of diffusion steps. More steps can improve quality but take longer.")
+    prompt = st.text_area("Default Prompt", "semi-realistic pixel art remaster, detailed, high-res",
+                         help="The prompt used to guide the image generation.")
     submit = st.form_submit_button("Save Settings")
     if submit:
-        st.success("Settings saved! (Note: Apply these in Enhance page for now.)")
-
-# Sidebar
-st.sidebar.title("Navigation")
-st.sidebar.button("Back to About", on_click=lambda: st.switch_page("../app.py"))
-st.sidebar.button("Enhance Textures", on_click=lambda: st.switch_page("enhance.py"))
-st.sidebar.button("Gallery", on_click=lambda: st.switch_page("gallery.py"))
-st.sidebar.button("Tutorial", on_click=lambda: st.switch_page("tutorial.py"))
-st.sidebar.markdown('<p class="text">Tweak your remastering process!</p>', unsafe_allow_html=True)
+        st.success("Settings saved! These will be used as defaults in the Enhance page.")

@@ -6,21 +6,18 @@ from torch.utils.data import Dataset
 import torch
 import numpy as np
 
-class CustomESRGANDataset(Dataset):
-    def __init__(self, lr_dir, hr_dir):
+class ImageDataset(Dataset):
+    def __init__(self, image_dir):
         super().__init__()
-        self.lr_images = sorted(glob.glob(os.path.join(lr_dir, '*')))
-        self.hr_images = sorted(glob.glob(os.path.join(hr_dir, '*')))
+        self.images = sorted(glob.glob(os.path.join(image_dir, '*')))
 
     def __getitem__(self, index):
-        lr = cv2.imread(self.lr_images[index], cv2.IMREAD_COLOR)
-        hr = cv2.imread(self.hr_images[index], cv2.IMREAD_COLOR)
-
+        img = cv2.imread(self.images[index], cv2.IMREAD_COLOR)
+        
         # Convert to tensor
-        lr = torch.from_numpy(np.transpose(lr, (2, 0, 1))).float() / 255.
-        hr = torch.from_numpy(np.transpose(hr, (2, 0, 1))).float() / 255.
-
-        return {'LR': lr, 'HR': hr}
+        img = torch.from_numpy(np.transpose(img, (2, 0, 1))).float() / 255.
+        
+        return {'image': img}
 
     def __len__(self):
-        return len(self.lr_images)
+        return len(self.images)
