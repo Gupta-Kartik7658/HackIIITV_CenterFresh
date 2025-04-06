@@ -1,12 +1,3 @@
-Here’s an updated version of your `README.md` with the requested additions for:
-
-- Stable Diffusion model (Realistic Vision v5.1)
-- AUTOMATIC1111 WebUI repo
-- ControlNet model files (Canny & Lineart)
-- ControlNet extension
-
----
-
 # Game Texture Enhancement Tool
 
 A tool for enhancing legacy game textures using AI/ML models. This application helps game designers recreate and enhance texture packs for remastered games.
