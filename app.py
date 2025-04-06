@@ -77,7 +77,7 @@ st.markdown("""
     <hr style="border: 2px dashed #FFD700; margin: 40px 0;">
     <p class="text" style="text-align: center;">Crafted with ❤️ by Team: CenterFresh | Hackathon 2025</p>
     <p class="text" style="text-align: center;">Team Members: </p>
-    <p class="text" style="text-align: center;"> Karthik </p>
+    <p class="text" style="text-align: center;"> Kartik </p>
     <p class="text" style="text-align: center;"> Abhinav</p>
     <p class="text" style="text-align: center;"> Abhijeet</p>
     <p class="text" style="text-align: center;"> Ankit</p>
